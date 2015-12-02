@@ -180,7 +180,9 @@ int validate_score (char line[], int *pscore){
 	
 	size_t i;
 	
+	/*loop through user input*/
 	for(i=0;i!='\0';i++){
+		/*check if all characters are digits, if not ID is not valid, return false*/
 		if(!isdigit((unsigned)line[i])){
 			return 0;
 		}
@@ -281,7 +283,7 @@ void store_record(record_list *rlist, record cr){
 	/*realloc records while create_record is true and maintain life of function via passing argument of selection*/
 		
 	if (rlist->nused == rlist->nalloc){
-		
+		/*stores record in dynamic memory*/
 		record *tmp = realloc(rlist->data, (rlist->nalloc + BLOCK)*sizeof(record));
 		#ifdef DEBUG
 		fprintf(stderr, "#\n");
