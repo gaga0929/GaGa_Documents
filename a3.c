@@ -123,8 +123,10 @@ int validate_id (char line[], int *pid){
 	
 	size_t i;
 	
+	/*loop through user input*/
 	for(i=0;i!='\0';i++){
 		
+		/*check if all characters are digits, if not ID is not valid, return false*/
 		if(!isdigit((unsigned)line[i])){
 			return 0;
 		}
